@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import static org.junit.Assert.*;  // This imports assertFalse, assertTrue, assertEquals, etc.
+
 
 public class CustomListTest {
     private CustomList list;
@@ -31,6 +33,14 @@ public class CustomListTest {
         int initialSize = list.getCount();  // Get the initial size of the list, should be 0
         list.addCity(new City("Estevan", "SK"));  // Add a new city to the list
         assertEquals(list.getCount(), initialSize + 1);  // Check if the size increased by 1
+    }
+    @Test
+    public void hasCityTest() {
+        list = MockCityList();
+        City city = new City("Estevan", "SK");
+        assertFalse(list.hasCity(city));  // Test should fail, as functionality is not yet implemented
+        list.addCity(city);
+        assertTrue(list.hasCity(city));  // Should pass once functionality is implemented
     }
 
 
