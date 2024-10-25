@@ -42,6 +42,16 @@ public class CustomListTest {
         list.addCity(city);
         assertTrue(list.hasCity(city));  // Should pass once functionality is implemented
     }
+    @Test
+    public void deleteCityTest() {
+        list = MockCityList();
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        assertEquals(1, list.getCount());  // Ensure city is added
+        list.deleteCity(city);
+        assertEquals(0, list.getCount());  // After deletion, the list should be empty
+    }
+
 
 
 }
