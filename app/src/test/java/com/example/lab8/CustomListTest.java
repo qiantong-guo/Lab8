@@ -51,6 +51,15 @@ public class CustomListTest {
         list.deleteCity(city);
         assertEquals(0, list.getCount());  // After deletion, the list should be empty
     }
+    @Test
+    public void countCitiesTest() {
+        list = MockCityList();
+        assertEquals(0, list.countCities());  // Should start with 0 cities
+        list.addCity(new City("Estevan", "SK"));
+        list.addCity(new City("Regina", "SK"));
+        assertEquals(2, list.countCities());  // Should count two cities
+    }
+
 
 
 
